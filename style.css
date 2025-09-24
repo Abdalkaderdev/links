@@ -91,6 +91,9 @@ body {
   95% { background: linear-gradient(90deg, rgba(189,159,103,0) 90%, var(--accent-gold) 100%); opacity: 0; }
 }
 
+/* Ensure Google Fonts don't block rendering */
+@font-face { font-family: Inter; font-display: swap; src: local("Inter"); }
+
 /* Gold accent divider */
 .gold-divider { height: 2px; width: 140px; margin: 10px auto 16px auto; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); border-radius: 2px; opacity: 0.85; }
 .gold-divider--small { width: 100px; margin: 8px auto 14px auto; }
