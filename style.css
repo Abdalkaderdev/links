@@ -1,11 +1,21 @@
 /* Base Reset */
 * { box-sizing: border-box; }
 html, body { height: 100%; }
+/* Theme variables */
+:root {
+  --bg: #2d2a28;
+  --shadow-dark: #1f1c1b;
+  --shadow-light: #35302e;
+  --text: #e9e6e4;
+  --accent-orange: #f2a65a;
+  --accent-gold: #bd9f67;
+}
+
 body {
   margin: 0;
   font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  color: #111111; /* dark text on light */
-  background: linear-gradient(160deg, #e6e6e6, #ededed);
+  color: var(--text);
+  background: radial-gradient(1200px 800px at 30% 10%, #332f2c, var(--bg));
 }
 
 .page {
@@ -20,10 +30,10 @@ body {
 .card {
   width: 100%;
   max-width: 560px;
-  background: #e6e6e6;
+  background: var(--bg);
   border-radius: 22px;
   /* Neumorphic raised: dark bottom-right, light top-left */
-  box-shadow: 16px 16px 32px #cacaca, -16px -16px 32px #ffffff;
+  box-shadow: 16px 16px 32px var(--shadow-dark), -16px -16px 32px var(--shadow-light);
   padding: 32px 28px;
   text-align: center;
   opacity: 0;
@@ -43,8 +53,8 @@ body {
   background: transparent;
   border-radius: 50%;
   padding: 6px; /* gold ring */
-  background-image: radial-gradient(closest-side, #d4af37, #c69a24 70%, transparent 71%);
-  box-shadow: 8px 8px 16px #cfcfcf, -8px -8px 16px #ffffff;
+  background-image: radial-gradient(closest-side, var(--accent-gold), #8e784a 70%, transparent 71%);
+  box-shadow: 12px 12px 24px var(--shadow-dark), -12px -12px 24px var(--shadow-light);
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 
@@ -56,10 +66,11 @@ body {
   line-height: 1.2;
   font-family: "Great Vibes", cursive;
   letter-spacing: 0.5px;
+  color: var(--accent-orange);
 }
 
 /* Gold accent divider */
-.gold-divider { height: 2px; width: 140px; margin: 10px auto 16px auto; background: linear-gradient(90deg, transparent, #d4af37, transparent); border-radius: 2px; opacity: 0.85; }
+.gold-divider { height: 2px; width: 140px; margin: 10px auto 16px auto; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); border-radius: 2px; opacity: 0.85; }
 .gold-divider--small { width: 100px; margin: 8px auto 14px auto; }
 
 .tagline {
@@ -80,8 +91,8 @@ body {
 }
 
 /* Language card heading styles */
-.section-title { margin: 0 0 8px 0; font-size: 22px; color: #1a1a1a; }
-.section-sub { margin: 0 0 18px 0; color: #555; }
+.section-title { margin: 0 0 8px 0; font-size: 22px; color: var(--accent-orange); }
+.section-sub { margin: 0 0 18px 0; color: #d4d0cd; }
 
 /* Interactive language chooser styles */
 .chooser-grid {
@@ -146,8 +157,8 @@ body {
   border-radius: 14px;
   padding: 16px;
   text-align: left;
-  background: #e6e6e6;
-  box-shadow: 12px 12px 24px #cacaca, -12px -12px 24px #ffffff;
+  background: var(--bg);
+  box-shadow: 12px 12px 24px var(--shadow-dark), -12px -12px 24px var(--shadow-light);
   opacity: 0; /* will fade in */
   transform: translateY(10px);
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -160,10 +171,10 @@ body {
 .badge {
   font-size: 12px;
   padding: 4px 8px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(189, 159, 103, 0.35);
   border-radius: 999px;
-  background: #f7f7f7;
-  color: #333;
+  background: #3a3531;
+  color: var(--accent-orange);
 }
 
 .lang-actions {
@@ -182,13 +193,13 @@ body {
   text-decoration: none;
   font-weight: 700;
   transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease;
-  background: #e6e6e6;
-  box-shadow: 10px 10px 18px #cacaca, -10px -10px 18px #ffffff;
+  background: var(--bg);
+  box-shadow: 10px 10px 18px var(--shadow-dark), -10px -10px 18px var(--shadow-light);
 }
 
 .action--call { color: #1f4fe0; }
 .action--wa { color: #148f4a; }
-.action:hover { transform: translateY(-1px) scale(1.01); box-shadow: 12px 12px 24px #c9c9c9, -12px -12px 24px #ffffff; }
+.action:hover { transform: translateY(-1px) scale(1.01); box-shadow: 12px 12px 24px var(--shadow-dark), -12px -12px 24px var(--shadow-light); }
 .action:active { transform: translateY(1px); box-shadow: inset 6px 6px 12px #c9c9c9, inset -6px -6px 12px #ffffff; }
 
 @media (min-width: 720px) {
@@ -208,17 +219,18 @@ body {
 
 .tab {
   background: #e6e6e6;
-  border: 1px solid #efefef;
+  border: 1px solid rgba(189, 159, 103, 0.25);
   border-radius: 10px;
   padding: 10px 12px;
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s ease, transform 0.12s ease, box-shadow 0.25s ease;
   /* Raised soft shadow */
-  box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
+  box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light);
+  color: var(--accent-orange);
 }
-.tab:hover { background: #efefef; transform: translateY(-1px); box-shadow: 10px 10px 20px #c9c9c9, -10px -10px 20px #ffffff; }
-.tab.is-active { background: #efefef; border-color: #d4af37; box-shadow: 10px 10px 20px #c9c9c9, -10px -10px 20px #ffffff, inset 0 -3px 0 #d4af37; }
+.tab:hover { background: #35302e; transform: translateY(-1px); box-shadow: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light); }
+.tab.is-active { background: #3a3531; border-color: var(--accent-gold); box-shadow: 10px 10px 20px var(--shadow-dark), -10px -10px 20px var(--shadow-light), inset 0 -3px 0 var(--accent-gold); }
 .tab:active { box-shadow: inset 6px 6px 12px #c9c9c9, inset -6px -6px 12px #ffffff; transform: translateY(1px); }
 
 .btn {
