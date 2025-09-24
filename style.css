@@ -144,6 +144,17 @@ body {
 
 .lang-title { margin: 0 0 10px 0; font-size: 18px; }
 
+/* Badges for spoken languages */
+.lang-badges { display: flex; gap: 6px; flex-wrap: wrap; margin: 6px 0 12px 0; }
+.badge {
+  font-size: 12px;
+  padding: 4px 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 999px;
+  background: #f7f7f7;
+  color: #333;
+}
+
 .lang-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;

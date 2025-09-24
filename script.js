@@ -41,9 +41,11 @@ document.addEventListener("DOMContentLoaded", () => {
     panelsContainer.innerHTML = people.map((p, idx) => {
       const telHref = `tel:${p.phone.replace(/\s+/g, '')}`;
       const waHref = `https://wa.me/${p.phone.replace(/\s+/g, '').replace('+','')}`;
+      const badges = p.languages.map(l => `<span class="badge">${l.charAt(0).toUpperCase()+l.slice(1)}</span>`).join(' ');
       return `
         <article class="lang-card-item" style="transition-delay:${100 + idx*120}ms">
           <h3 class="lang-title">${p.name}</h3>
+          <div class="lang-badges">${badges}</div>
           <div class="lang-actions">
             <a class="action action--call" href="${telHref}"><span aria-hidden="true">📞</span><span>Call</span></a>
             <a class="action action--wa" href="${waHref}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
