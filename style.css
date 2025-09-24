@@ -4,8 +4,8 @@ html, body { height: 100%; }
 body {
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  color: #0f172a;
-  background: linear-gradient(160deg, #f3f4f6, #e5e7eb);
+  color: #111111; /* black writing */
+  background: linear-gradient(160deg, #fffaf0, #f5f5f5); /* subtle warm light */
 }
 
 .page {
@@ -42,7 +42,7 @@ body {
 
 .tagline {
   margin: 0 0 20px 0;
-  color: #475569;
+  color: #333333;
 }
 
 .links {
@@ -54,29 +54,30 @@ body {
   display: block;
   width: 100%;
   padding: 14px 16px;
-  color: #ffffff;
-  background: #2563eb; /* blue */
-  border: 1px solid #1d4ed8;
+  color: #111111; /* black text */
+  background: #d4af37; /* gold */
+  border: 1px solid #b38e2e; /* darker gold border */
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.2px;
   transition: transform 0.06s ease, box-shadow 0.2s ease, background 0.2s ease;
-  box-shadow: 0 2px 0 #1e40af;
+  box-shadow: 0 2px 0 #947724;
 }
 
 .btn:hover {
-  background: #1d4ed8;
+  background: #c39b2f; /* slightly darker gold */
 }
 
 .btn:active {
   transform: translateY(1px);
-  box-shadow: 0 1px 0 #1e40af;
+  box-shadow: 0 1px 0 #947724;
 }
 
 @media (prefers-color-scheme: dark) {
-  body { color: #e5e7eb; background: linear-gradient(160deg, #0b1220, #0f172a); }
-  .card { background: #0b1220; box-shadow: 0 10px 25px rgba(0,0,0,0.4), 0 4px 10px rgba(0,0,0,0.3); }
-  .tagline { color: #94a3b8; }
+  /* Keep brand look even in dark mode */
+  body { color: #111111; background: linear-gradient(160deg, #fffaf0, #f5f5f5); }
+  .card { background: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.06), 0 4px 10px rgba(0,0,0,0.05); }
+  .tagline { color: #333333; }
 }
 
