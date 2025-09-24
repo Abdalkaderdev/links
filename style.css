@@ -174,6 +174,29 @@ body {
 /* Loaded state animations for unified language cards */
 .is-loaded .lang-card-item { opacity: 1; transform: translateY(0); }
 
+/* Tabs styling */
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 8px 0 14px 0;
+}
+
+.tab {
+  background: #f7f7f7;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.12s ease;
+}
+.tab:hover { background: #f0f0f0; transform: translateY(-1px); }
+.tab.is-active {
+  background: #fff7dd;
+  border-color: #d4af37;
+}
+
 .btn {
   display: block;
   width: 100%;

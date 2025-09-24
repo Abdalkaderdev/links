@@ -36,34 +36,31 @@
       </nav>
     </section>
 
-    <!-- Unified language section: one card per language with two actions -->
-    <section class="card lang-unified" role="region" aria-label="Connect in your language">
+    <!-- Tab-based language routing section -->
+    <section class="card lang-tabs" role="region" aria-label="Connect in your language">
       <h2 class="section-title">Connect in Your Language</h2>
       <p class="section-sub">Pick your language and choose to Call or WhatsApp.</p>
 
-      <div class="lang-cards">
-        <article class="lang-card-item" aria-labelledby="lang-ku">
-          <h3 id="lang-ku" class="lang-title">Kurdish</h3>
-          <div class="lang-actions">
-            <a class="action action--call" href="tel:+9647504455822"><span aria-hidden="true">📞</span><span>Call</span></a>
-            <a class="action action--wa" href="https://wa.me/9647504455822" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
-          </div>
-        </article>
-        <article class="lang-card-item" aria-labelledby="lang-ar">
-          <h3 id="lang-ar" class="lang-title">Arabic</h3>
-          <div class="lang-actions">
-            <a class="action action--call" href="tel:+9647507922138"><span aria-hidden="true">📞</span><span>Call</span></a>
-            <a class="action action--wa" href="https://wa.me/9647507922138" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
-          </div>
-        </article>
-        <article class="lang-card-item" aria-labelledby="lang-en">
-          <h3 id="lang-en" class="lang-title">English</h3>
-          <div class="lang-actions">
-            <a class="action action--call" href="tel:+9647514415003"><span aria-hidden="true">📞</span><span>Call</span></a>
-            <a class="action action--wa" href="https://wa.me/9647514415003" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
-          </div>
-        </article>
+      <!-- Language tabs -->
+      <div class="tabs" role="tablist" aria-label="Languages">
+        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-kurdish" id="tab-kurdish" data-lang="kurdish">Kurdish</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-arabic" id="tab-arabic" data-lang="arabic">Arabic</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-english" id="tab-english" data-lang="english">English</button>
       </div>
+
+      <!-- Panels will be populated from script.js using data below -->
+      <div class="lang-cards" id="lang-panels"></div>
+
+      <!-- Contact data embedded in HTML for vanilla JS to read (no framework) -->
+      <script type="application/json" id="contact-data">
+        {
+          "people": [
+            { "name": "Boss", "languages": ["kurdish", "arabic"], "phone": "+9647504455822" },
+            { "name": "Me", "languages": ["arabic", "english"], "phone": "+9647507922138" },
+            { "name": "Boss’s Son", "languages": ["kurdish", "english"], "phone": "+9647514415003" }
+          ]
+        }
+      </script>
     </section>
   </main>
 </body>

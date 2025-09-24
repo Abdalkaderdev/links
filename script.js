@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const popover = document.getElementById('choice-popover');
   let currentChoice = null;
   const unifiedLangCards = Array.from(document.querySelectorAll('.lang-card-item'));
+  const tabs = Array.from(document.querySelectorAll('.tab'));
+  const panelsContainer = document.getElementById('lang-panels');
+  const contactDataEl = document.getElementById('contact-data');
 
   // Mark page as loaded to trigger CSS transitions
   if (page) {
@@ -28,6 +31,44 @@ document.addEventListener("DOMContentLoaded", () => {
   unifiedLangCards.forEach((card, index) => {
     card.style.transitionDelay = `${150 + index * 120}ms`;
   });
+
+  // ----- Tabs Rendering Logic -----
+  function renderCardsForLanguage(langKey) {
+    if (!panelsContainer || !contactDataEl) return;
+    const data = JSON.parse(contactDataEl.textContent);
+    const people = data.people.filter(p => p.languages.includes(langKey));
+
+    panelsContainer.innerHTML = people.map((p, idx) => {
+      const telHref = `tel:${p.phone.replace(/\s+/g, '')}`;
+      const waHref = `https://wa.me/${p.phone.replace(/\s+/g, '').replace('+','')}`;
+      return `
+        <article class="lang-card-item" style="transition-delay:${100 + idx*120}ms">
+          <h3 class="lang-title">${p.name}</h3>
+          <div class="lang-actions">
+            <a class="action action--call" href="${telHref}"><span aria-hidden="true">📞</span><span>Call</span></a>
+            <a class="action action--wa" href="${waHref}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
+          </div>
+        </article>
+      `;
+    }).join('');
+
+    // Trigger fade-in by toggling is-loaded on parent
+    panelsContainer.offsetHeight; // force reflow
+    document.querySelector('.page')?.classList.add('is-loaded');
+  }
+
+  if (tabs.length && contactDataEl) {
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+        renderCardsForLanguage(tab.dataset.lang);
+      });
+    });
+    // Initial render defaults to Kurdish
+    renderCardsForLanguage('kurdish');
+  }
 
   // Interactive language chooser logic
   // Shows a small popover near the clicked language to choose Call or WhatsApp
