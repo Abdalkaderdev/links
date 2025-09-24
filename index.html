@@ -14,14 +14,14 @@
 </head>
 <body>
   <main class="page is-loading">
-    
-    <!-- Header Card -->
+
+    <!-- Company Header Card -->
     <section class="card uiverse-header" role="region" aria-label="Real House Company links">
       <div class="u-border" aria-hidden="true"></div>
       <div class="u-content">
         <div class="u-logo">
-          <img class="u-logo1 logo" src="logorealhouse.png" alt="" aria-hidden="true">
-          <img class="u-logo2 logo" src="logorealhouse.png" alt="" aria-hidden="true">
+          <img class="u-logo1 logo" src="logorealhouse.png" alt="" aria-hidden="true" width="120" height="120">
+          <img class="u-logo2 logo" src="logorealhouse.png" alt="" aria-hidden="true" width="120" height="120">
           <span class="u-trail" aria-hidden="true"></span>
         </div>
         <h1 class="company">Real House Company</h1>
@@ -30,28 +30,15 @@
         <div class="u-bottom-text" aria-hidden="true">REAL HOUSE</div>
       </div>
 
-      <!-- Primary Links -->
       <nav class="links" aria-label="Primary links">
-        <a class="btn" href="https://realhouseiq.com/" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon">🏠</span>
-          <span class="btn__text">Website</span>
-        </a>
-        <a class="btn" href="https://www.instagram.com/realhouseiq/" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon">📸</span>
-          <span class="btn__text">Instagram</span>
-        </a>
-        <a class="btn" href="https://www.facebook.com/realhouseiq/" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon">📘</span>
-          <span class="btn__text">Facebook</span>
-        </a>
-        <a class="btn" href="mailto:info@realhouse.com">
-          <span class="btn__icon">✉️</span>
-          <span class="btn__text">Email</span>
-        </a>
+        <a class="btn" href="https://realhouseiq.com/" target="_blank" rel="noopener noreferrer">🏠 Website</a>
+        <a class="btn" href="https://www.instagram.com/realhouseiq/" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+        <a class="btn" href="https://www.facebook.com/realhouseiq/" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+        <a class="btn" href="mailto:info@realhouse.com">✉️ Email</a>
       </nav>
     </section>
 
-    <!-- Language Section -->
+    <!-- Language / Contact Section -->
     <section class="card lang-tabs" role="region" aria-label="Connect in your language">
       <h2 class="section-title">Connect in Your Language</h2>
       <div class="gold-divider gold-divider--small" aria-hidden="true"></div>
@@ -59,15 +46,13 @@
 
       <!-- Language tabs -->
       <div class="tabs" role="tablist" aria-label="Languages">
-        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-kurdish" data-lang="kurdish">Kurdish</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-arabic" data-lang="arabic">Arabic</button>
-        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-english" data-lang="english">English</button>
+        <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-kurdish" id="tab-kurdish" data-lang="kurdish">Kurdish</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-arabic" id="tab-arabic" data-lang="arabic">Arabic</button>
+        <button class="tab" role="tab" aria-selected="false" aria-controls="panel-english" id="tab-english" data-lang="english">English</button>
       </div>
 
-      <!-- Language cards container -->
       <div class="lang-cards" id="lang-panels"></div>
 
-      <!-- Embedded contact data -->
       <script type="application/json" id="contact-data">
         {
           "people": [
@@ -78,7 +63,6 @@
         }
       </script>
     </section>
-
   </main>
 </body>
 </html>
