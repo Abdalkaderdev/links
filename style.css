@@ -189,7 +189,7 @@ body {
 .action--call { color: #1f4fe0; }
 .action--wa { color: #148f4a; }
 .action:hover { transform: translateY(-1px) scale(1.01); box-shadow: 12px 12px 24px #c9c9c9, -12px -12px 24px #ffffff; }
-.action:active { transform: translateY(1px); }
+.action:active { transform: translateY(1px); box-shadow: inset 6px 6px 12px #c9c9c9, inset -6px -6px 12px #ffffff; }
 
 @media (min-width: 720px) {
   .lang-cards { grid-template-columns: repeat(3, 1fr); }
@@ -213,10 +213,13 @@ body {
   padding: 10px 12px;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.12s ease;
+  transition: background 0.2s ease, transform 0.12s ease, box-shadow 0.25s ease;
+  /* Raised soft shadow */
+  box-shadow: 8px 8px 16px #cacaca, -8px -8px 16px #ffffff;
 }
-.tab:hover { background: #efefef; transform: translateY(-1px); }
-.tab.is-active { background: #efefef; border-color: #d4af37; box-shadow: inset 0 -3px 0 #d4af37; }
+.tab:hover { background: #efefef; transform: translateY(-1px); box-shadow: 10px 10px 20px #c9c9c9, -10px -10px 20px #ffffff; }
+.tab.is-active { background: #efefef; border-color: #d4af37; box-shadow: 10px 10px 20px #c9c9c9, -10px -10px 20px #ffffff, inset 0 -3px 0 #d4af37; }
+.tab:active { box-shadow: inset 6px 6px 12px #c9c9c9, inset -6px -6px 12px #ffffff; transform: translateY(1px); }
 
 .btn {
   display: block;
