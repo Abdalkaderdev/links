@@ -28,11 +28,10 @@ body {
 .logo {
   display: block;
   margin: 0 auto 12px auto;
-  width: 96px;
-  height: 96px;
-  border-radius: 20%;
-  object-fit: cover;
-  background: #e5e7eb;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  background: transparent;
 }
 
 .company {
