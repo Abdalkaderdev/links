@@ -56,6 +56,35 @@
       </nav>
     </section>
 
+    <!-- Interactive language chooser -->
+    <section class="card chooser-card" role="region" aria-label="Connect in your language">
+      <h2 class="section-title">Connect in Your Language</h2>
+      <p class="section-sub">Pick your language and choose to call or message on WhatsApp.</p>
+
+      <div class="chooser-grid" role="list">
+        <button class="choice" role="listitem" data-lang="Kurdish" data-call="tel:+9647504455822" data-wa="https://wa.me/9647504455822" aria-haspopup="true" aria-expanded="false">
+          <span class="choice__lang">Kurdish</span>
+        </button>
+        <button class="choice" role="listitem" data-lang="Arabic" data-call="tel:+9647507922138" data-wa="https://wa.me/9647507922138" aria-haspopup="true" aria-expanded="false">
+          <span class="choice__lang">Arabic</span>
+        </button>
+        <button class="choice" role="listitem" data-lang="English" data-call="tel:+9647507922138" data-wa="https://wa.me/9647507922138" aria-haspopup="true" aria-expanded="false">
+          <span class="choice__lang">English</span>
+        </button>
+      </div>
+
+      <!-- Popover actions (single instance) -->
+      <div class="choice-popover" id="choice-popover" hidden>
+        <button class="choice-action" data-action="call" aria-label="Call">
+          <span class="btn__icon" aria-hidden="true">📞</span>
+          <span class="btn__text">Call</span>
+        </button>
+        <button class="choice-action" data-action="wa" aria-label="WhatsApp">
+          <span class="btn__icon" aria-hidden="true">💬</span>
+          <span class="btn__text">WhatsApp</span>
+        </button>
+      </div>
+    </section>
     <!-- Call routing by language -->
     <section class="card lang-card" role="region" aria-label="Call us by language">
       <h2 class="section-title">Call Us by Language</h2>
