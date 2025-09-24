@@ -30,6 +30,9 @@ body {
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+/* Spacing between stacked cards */
+.card + .card { margin-top: 18px; }
+
 .logo {
   display: block;
   margin: 0 auto 12px auto;
@@ -57,6 +60,10 @@ body {
   display: grid;
   gap: 12px;
 }
+
+/* Language card heading styles */
+.section-title { margin: 0 0 8px 0; font-size: 22px; }
+.section-sub { margin: 0 0 18px 0; color: #444; }
 
 .btn {
   display: block;
