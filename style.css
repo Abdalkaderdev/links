@@ -69,6 +69,28 @@ body {
   color: var(--accent-orange);
 }
 
+/* Uiverse-inspired header card effects (adapted to palette) */
+.uiverse-header { position: relative; overflow: hidden; }
+.uiverse-header .u-border { position: absolute; inset: 0; border: 2px solid var(--accent-gold); opacity: 0; transform: rotate(10deg); transition: all 0.5s ease-in-out; }
+.uiverse-header .u-content { transition: all 0.5s ease-in-out; }
+.uiverse-header .u-logo { height: 60px; width: 120px; margin: 0 auto 6px auto; position: relative; overflow: hidden; transition: all 1s ease-in-out; }
+.uiverse-header .u-logo1 { position: absolute; left: 0; height: 60px; }
+.uiverse-header .u-logo2 { position: absolute; left: 60px; height: 60px; }
+.uiverse-header .u-trail { position: absolute; right: 0; height: 100%; width: 100%; opacity: 0; }
+.uiverse-header .u-bottom-text { position: absolute; left: 50%; bottom: 13px; transform: translateX(-50%); font-size: 9px; letter-spacing: 6px; color: var(--accent-gold); opacity: 0; transition: all 0.5s ease-in-out; }
+.uiverse-header:hover { border-radius: 0; transform: scale(1.02); }
+.uiverse-header:hover .u-logo { width: 180px; }
+.uiverse-header:hover .u-border { inset: 15px; opacity: 1; transform: rotate(0deg); }
+.uiverse-header:hover .u-bottom-text { opacity: 1; letter-spacing: 9px; }
+.uiverse-header:hover .u-trail { animation: u-trail 1s ease-in-out; }
+
+@keyframes u-trail {
+  0% { background: linear-gradient(90deg, rgba(189,159,103,0) 90%, var(--accent-gold) 100%); opacity: 0; }
+  30% { background: linear-gradient(90deg, rgba(189,159,103,0) 70%, var(--accent-gold) 100%); opacity: 1; }
+  70% { background: linear-gradient(90deg, rgba(189,159,103,0) 70%, var(--accent-gold) 100%); opacity: 1; }
+  95% { background: linear-gradient(90deg, rgba(189,159,103,0) 90%, var(--accent-gold) 100%); opacity: 0; }
+}
+
 /* Gold accent divider */
 .gold-divider { height: 2px; width: 140px; margin: 10px auto 16px auto; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); border-radius: 2px; opacity: 0.85; }
 .gold-divider--small { width: 100px; margin: 8px auto 14px auto; }
