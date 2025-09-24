@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const chooser = document.querySelector('.chooser-grid');
   const popover = document.getElementById('choice-popover');
   let currentChoice = null;
+  const unifiedLangCards = Array.from(document.querySelectorAll('.lang-card-item'));
 
   // Mark page as loaded to trigger CSS transitions
   if (page) {
@@ -21,6 +22,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // Extra stagger for language buttons after primary list
   langButtons.forEach((btn, index) => {
     btn.style.transitionDelay = `${600 + index * 120}ms`;
+  });
+
+  // Stagger unified language cards
+  unifiedLangCards.forEach((card, index) => {
+    card.style.transitionDelay = `${150 + index * 120}ms`;
   });
 
   // Interactive language chooser logic

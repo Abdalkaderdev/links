@@ -33,112 +33,37 @@
           <span class="btn__icon" aria-hidden="true">✉️</span>
           <span class="btn__text">Email</span>
         </a>
-        
-        <!-- Calls -->
-        <a class="btn" href="tel:+9647504455822">
-          <span class="btn__icon" aria-hidden="true">📞</span>
-          <span class="btn__text">Call +964 750 445 5822</span>
-        </a>
-        <a class="btn" href="tel:+9647507922138">
-          <span class="btn__icon" aria-hidden="true">📞</span>
-          <span class="btn__text">Call +964 750 792 2138</span>
-        </a>
-
-        <!-- WhatsApp -->
-        <a class="btn" href="https://wa.me/9647504455822" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon" aria-hidden="true">💬</span>
-          <span class="btn__text">WhatsApp +964 750 445 5822</span>
-        </a>
-        <a class="btn" href="https://wa.me/9647507922138" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon" aria-hidden="true">💬</span>
-          <span class="btn__text">WhatsApp +964 750 792 2138</span>
-        </a>
       </nav>
     </section>
 
-    <!-- Interactive language chooser -->
-    <section class="card chooser-card" role="region" aria-label="Connect in your language">
+    <!-- Unified language section: one card per language with two actions -->
+    <section class="card lang-unified" role="region" aria-label="Connect in your language">
       <h2 class="section-title">Connect in Your Language</h2>
-      <p class="section-sub">Pick your language and choose to call or message on WhatsApp.</p>
+      <p class="section-sub">Pick your language and choose to Call or WhatsApp.</p>
 
-      <div class="chooser-grid" role="list">
-        <button class="choice" role="listitem" data-lang="Kurdish" data-call="tel:+9647504455822" data-wa="https://wa.me/9647504455822" aria-haspopup="true" aria-expanded="false">
-          <span class="choice__lang">Kurdish</span>
-        </button>
-        <button class="choice" role="listitem" data-lang="Arabic" data-call="tel:+9647507922138" data-wa="https://wa.me/9647507922138" aria-haspopup="true" aria-expanded="false">
-          <span class="choice__lang">Arabic</span>
-        </button>
-        <button class="choice" role="listitem" data-lang="English" data-call="tel:+9647507922138" data-wa="https://wa.me/9647507922138" aria-haspopup="true" aria-expanded="false">
-          <span class="choice__lang">English</span>
-        </button>
+      <div class="lang-cards">
+        <article class="lang-card-item" aria-labelledby="lang-ku">
+          <h3 id="lang-ku" class="lang-title">Kurdish</h3>
+          <div class="lang-actions">
+            <a class="action action--call" href="tel:+9647504455822"><span aria-hidden="true">📞</span><span>Call</span></a>
+            <a class="action action--wa" href="https://wa.me/9647504455822" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
+          </div>
+        </article>
+        <article class="lang-card-item" aria-labelledby="lang-ar">
+          <h3 id="lang-ar" class="lang-title">Arabic</h3>
+          <div class="lang-actions">
+            <a class="action action--call" href="tel:+9647507922138"><span aria-hidden="true">📞</span><span>Call</span></a>
+            <a class="action action--wa" href="https://wa.me/9647507922138" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
+          </div>
+        </article>
+        <article class="lang-card-item" aria-labelledby="lang-en">
+          <h3 id="lang-en" class="lang-title">English</h3>
+          <div class="lang-actions">
+            <a class="action action--call" href="tel:+9647514415003"><span aria-hidden="true">📞</span><span>Call</span></a>
+            <a class="action action--wa" href="https://wa.me/9647514415003" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">💬</span><span>WhatsApp</span></a>
+          </div>
+        </article>
       </div>
-
-      <!-- Popover actions (single instance) -->
-      <div class="choice-popover" id="choice-popover" hidden>
-        <button class="choice-action" data-action="call" aria-label="Call">
-          <span class="btn__icon" aria-hidden="true">📞</span>
-          <span class="btn__text">Call</span>
-        </button>
-        <button class="choice-action" data-action="wa" aria-label="WhatsApp">
-          <span class="btn__icon" aria-hidden="true">💬</span>
-          <span class="btn__text">WhatsApp</span>
-        </button>
-      </div>
-    </section>
-    <!-- Call routing by language -->
-    <section class="card lang-card" role="region" aria-label="Call us by language">
-      <h2 class="section-title">Call Us by Language</h2>
-      <p class="section-sub">Choose your preferred language and connect instantly.</p>
-
-      <nav class="links lang-links" aria-label="Language call options">
-        <!-- Kurdish: Call & WhatsApp -->
-        <a class="btn" href="tel:+9647504455822">
-          <span class="btn__icon" aria-hidden="true">📞</span>
-          <span class="btn__text">Call in Kurdish</span>
-        </a>
-        <a class="btn" href="https://wa.me/9647504455822" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon" aria-hidden="true">💬</span>
-          <span class="btn__text">WhatsApp in Kurdish</span>
-        </a>
-        <!-- Kurdish alternate line -->
-        <a class="btn" href="tel:+9647514415003">
-          <span class="btn__icon" aria-hidden="true">📞</span>
-          <span class="btn__text">Call in Kurdish (Alt)</span>
-        </a>
-        <a class="btn" href="https://wa.me/9647514415003" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon" aria-hidden="true">💬</span>
-          <span class="btn__text">WhatsApp in Kurdish (Alt)</span>
-        </a>
-
-        <!-- Arabic: Call & WhatsApp -->
-        <a class="btn" href="tel:+9647507922138">
-          <span class="btn__icon" aria-hidden="true">📞</span>
-          <span class="btn__text">Call in Arabic</span>
-        </a>
-        <a class="btn" href="https://wa.me/9647507922138" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon" aria-hidden="true">💬</span>
-          <span class="btn__text">WhatsApp in Arabic</span>
-        </a>
-
-        <!-- English: Call & WhatsApp (updated to +9647507922138) -->
-        <a class="btn" href="tel:+9647507922138">
-          <span class="btn__icon" aria-hidden="true">📞</span>
-          <span class="btn__text">Call in English</span>
-        </a>
-        <a class="btn" href="https://wa.me/9647507922138" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon" aria-hidden="true">💬</span>
-          <span class="btn__text">WhatsApp in English</span>
-        </a>
-        <!-- English alternate line -->
-        <a class="btn" href="tel:+9647514415003">
-          <span class="btn__icon" aria-hidden="true">📞</span>
-          <span class="btn__text">Call in English (Alt)</span>
-        </a>
-        <a class="btn" href="https://wa.me/9647514415003" target="_blank" rel="noopener noreferrer">
-          <span class="btn__icon" aria-hidden="true">💬</span>
-          <span class="btn__text">WhatsApp in English (Alt)</span>
-        </a>
-      </nav>
     </section>
   </main>
 </body>

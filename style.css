@@ -123,6 +123,57 @@ body {
   .chooser-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Unified language section styles */
+.lang-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.lang-card-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  text-align: left;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  opacity: 0; /* will fade in */
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.lang-title { margin: 0 0 10px 0; font-size: 18px; }
+
+.lang-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.action--call { background: #2563eb; color: #fff; box-shadow: 0 2px 0 #1e40af; }
+.action--wa { background: #22c55e; color: #0b3d1f; box-shadow: 0 2px 0 #15803d; }
+.action:hover { transform: translateY(-1px) scale(1.01); box-shadow: 0 6px 18px rgba(0,0,0,0.12); }
+.action:active { transform: translateY(1px); }
+
+@media (min-width: 720px) {
+  .lang-cards { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Loaded state animations for unified language cards */
+.is-loaded .lang-card-item { opacity: 1; transform: translateY(0); }
+
 .btn {
   display: block;
   width: 100%;
