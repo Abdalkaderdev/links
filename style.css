@@ -61,6 +61,13 @@ body {
   gap: 12px;
 }
 
+/* Responsive two-column grid for language links on wider screens */
+@media (min-width: 520px) {
+  .lang-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 /* Language card heading styles */
 .section-title { margin: 0 0 8px 0; font-size: 22px; }
 .section-sub { margin: 0 0 18px 0; color: #444; }
