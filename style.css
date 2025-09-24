@@ -189,6 +189,20 @@ body {
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+/* Uiverse-inspired gradient boxes inside contact cards */
+.u-contact-deco { position: relative; border-radius: 16px; overflow: hidden; }
+.u-contact-bg { position: absolute; inset: 0; background: radial-gradient(circle at 100% 107%, rgba(242,166,90,0.25) 0%, rgba(189,159,103,0.15) 40%, rgba(61,55,50,0.6) 100%); filter: blur(0.3px); }
+.u-contact-box { position: absolute; padding: 8px; background: rgba(255,255,255,0.06); border-top: 1px solid rgba(255,255,255,0.25); border-right: 1px solid rgba(255,255,255,0.15); border-radius: 12% 14% 42% 0%/10% 12% 75% 0%; box-shadow: rgba(0,0,0,0.35) -7px 7px 29px 0px; transform-origin: bottom left; transition: all 0.8s ease-in-out; }
+.u-contact-box::before { content: ""; position: absolute; inset: 0; border-radius: inherit; opacity: 0; transition: all 0.5s ease-in-out; }
+.u-box1 { width: 70%; height: 70%; bottom: -70%; left: -70%; }
+.u-box1::before { background: radial-gradient(circle at 30% 107%, rgba(253,244,151,0.35) 0%, rgba(242,166,90,0.45) 60%, rgba(189,159,103,0.55) 90%); }
+.u-box2 { width: 50%; height: 50%; bottom: -50%; left: -50%; transition-delay: 0.15s; }
+.u-box2::before { background: radial-gradient(circle at 30% 107%, rgba(145,233,255,0.35) 0%, rgba(31,79,224,0.55) 90%); }
+.u-box3 { width: 30%; height: 30%; bottom: -30%; left: -30%; transition-delay: 0.3s; }
+.u-box3::before { background: radial-gradient(circle at 30% 107%, rgba(242,166,90,0.35) 0%, rgba(189,159,103,0.55) 90%); }
+.lang-card-item:hover .u-contact-box { bottom: -1px; left: -1px; }
+.lang-card-item:hover .u-contact-box::before { opacity: 1; }
+
 .lang-title { margin: 0 0 10px 0; font-size: 18px; }
 
 /* Badges for spoken languages */
